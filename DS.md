@@ -78,4 +78,61 @@ int main()
 return 0;
 }
 ```
+# 2.Balancing of Parentheses using a Stack
+```
+#include <stdio.h>
+#include <string.h>
+#define MAX 100
+
+char stack[MAX];
+int top = -1;
+
+void push(char c) {
+    stack[++top] = c;
+}
+
+char pop() {
+    return stack[top--];
+}
+
+int isMatchingPair(char opening, char closing) {
+    return (opening == '(' && closing == ')') ||
+           (opening == '{' && closing == '}') ||
+           (opening == '[' && closing == ']');
+}
+
+int isBalanced(const char *expression) {
+    int i;
+    top = -1;  // Reset stack before checking
+
+    for (i = 0; expression[i] != '\0'; i++) {
+        char ch = expression[i];
+
+        if (ch == '(' || ch == '{' || ch == '[') {
+            push(ch);
+        } 
+        else if (ch == ')' || ch == '}' || ch == ']') {
+            if (top == -1 || !isMatchingPair(pop(), ch)) {
+                return 0;
+            }
+        }
+    }
+    return (top == -1);
+}
+
+int main() {
+    char expression[MAX];
+
+    printf("Enter an expression: ");
+    scanf("%s", expression);
+
+    if (isBalanced(expression)) {
+        printf("The expression is Balanced.\n");
+    } else {
+        printf("The expression is Unbalanced.\n");
+    }
+
+    return 0;
+}
+```
 
