@@ -16,6 +16,7 @@ Write the following queries in SQL.
 ```
 
 # Insurance Database.
+```
 Consider the insurance database given below.
 PERSON (driverid: String, name: String, address: String)
 CAR (regno: String, model: String, year: Int)
@@ -34,5 +35,6 @@ report number 12 to 25000
 2002.
 5. Find the number of accidents in which cars belonging to a specific model were
 involved.
+```
 
 
