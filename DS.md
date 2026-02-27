@@ -409,7 +409,7 @@ int main() {
     }
 }
 ```
-##### 7.Priority Queue
+## 7.Priority Queue
 ```
 #include <stdio.h>
 #include <stdlib.h>
