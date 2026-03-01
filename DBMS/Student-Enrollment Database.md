@@ -1,4 +1,4 @@
-#### Create the above tables by properly specifying all the integrity constraints.
+### Create the above tables by properly specifying all the integrity constraints.
 ```
 CREATE TABLE Student (
  snum INT PRIMARY KEY,
@@ -27,7 +27,7 @@ CREATE TABLE Enrolled (
  FOREIGN KEY (cname) REFERENCES Class(name)
 );
 ```
-#### Insert at least five tuples into each table. 
+### Insert at least five tuples into each table. 
 ```
 Students
 INSERT INTO Student VALUES (1, 'Alice', 'CS', 'JR', 20);
@@ -57,17 +57,17 @@ INSERT INTO Enrolled VALUES (3, 'Physics');
 INSERT INTO Enrolled VALUES (3, 'DBMS');
 INSERT INTO Enrolled VALUES (4, 'Networks');
 ```
-#### Find the names of all Juniors (level=JR) who are enrolled in a class taught by I.John.
+### Find the names of all Juniors (level=JR) who are enrolled in a class taught by I.John.
 ```
 SELECT * FROM Student ,faculty WHERE level='JR' and fname='i.john';
 ```
-#### For each level, print the level and the average age of students for that level.
+### For each level, print the level and the average age of students for that level.
 ``` 
 SELECT level, AVG(age) AS avg_age
 FROM Student
 GROUP BY level;
 ```
-#### Find the names of students not enrolled in any class
+### Find the names of students not enrolled in any class
 ```
 SELECT s.sname
 FROM Student s
@@ -75,5 +75,6 @@ WHERE s.snum NOT IN (
  SELECT e.snum FROM Enrolled e
 );
 ```
+
 
 
