@@ -471,6 +471,7 @@ void dequeue()
 
 void display_pqueue()
 {
+	int i;
     if (front == -1 || front > rear)
     {
         printf("\nQueue is empty");
@@ -478,7 +479,7 @@ void display_pqueue()
     }
 
     printf("\nPriority Queue elements: ");
-    for (int i = front; i <= rear; i++)
+    for ( i = front; i <= rear; i++)
     {
         printf("%d ", pri_que[i]);
     }
